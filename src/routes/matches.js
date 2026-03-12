@@ -58,6 +58,12 @@ router.post('/', async (req, res) => {
       awayScore: validatedData.awayScore || 0,
     }).returning();
     
+
+    if(res.app.locals.broadcastMatchCreated) {
+      res.app.locals.broadcastMatchCreated(newMatch[0]);
+    }
+
+
     res.status(201).json(newMatch[0]);
   } catch (error) {
     res.status(400).json({ error: error.message });
