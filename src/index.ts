@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm';
-import { db, pool } from './db.ts';
-import { demoUsers } from './schema.ts';
+import { db, pool } from './db';
+import { demoUsers } from './schema';
 
 async function main() {
   try {
